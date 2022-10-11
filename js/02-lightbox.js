@@ -7,8 +7,8 @@ galleryContainer.insertAdjacentHTML('beforeend', getMarkupStringEl);
 function getMarkupString(galleryItems) {
 	return galleryItems
 		.map(({ preview, original, description }) => {
-			return `<a class = "gallery__item" href = "${original}">
-         <img class = "gallery__image" src="${preview}" alt="${description}"></a>`;
+			return `<li class = "gallery__item"><a href = "${original}">
+         <img class = "gallery__image" src="${preview}" alt="${description}"></a></li>`;
 		})
 		.join('');
 }
