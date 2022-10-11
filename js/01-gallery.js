@@ -5,8 +5,8 @@ galleryContainer.innerHTML = getMarkupString(galleryItems);
 galleryContainer.addEventListener('click', onGalleryContainer);
 
 function getMarkupString(galleryItemsArray) {
-	const modifItems = galleryItemsArray.map(
-		({ original, preview, description }) => {
+	return galleryItemsArray
+		.map(({ original, preview, description }) => {
 			return `<div class="gallery__item">
 				<a class="gallery__link" href="${original}">
 					<img
@@ -17,9 +17,8 @@ function getMarkupString(galleryItemsArray) {
 					/>
 				</a>
 			</div>`;
-		}
-	);
-	return modifItems.join('');
+		})
+		.join('');
 }
 
 function onGalleryContainer(event) {
